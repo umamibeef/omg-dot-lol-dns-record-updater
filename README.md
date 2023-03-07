@@ -1,7 +1,7 @@
 # OPNsense omg.lol DNS Record Updater Script
 This python script updates a DNS record on omg.lol based on the environment variables set from within the firewall as a form of dynamic DNS. It wrote this to run as a cron action on my OPNsense firewall, but you could adapt this to work on anything else, really. This uses omg.lol's REST API.
 
-# Pre-reading
+# Pre-Reading
 I used the following resources to put this together:
 * The OPNsense config documention: https://docs.opnsense.org/development/backend/configd.html
 * omg.lol's DNS record REST API documenation: https://api.omg.lol/#token-patch-dns-edit-an-existing-dns-record
