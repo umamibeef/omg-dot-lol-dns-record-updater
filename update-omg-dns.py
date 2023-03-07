@@ -2,17 +2,14 @@ import os
 import requests
 
 def update():
-
     try:
         # get relevant environemnt variables
         api_key = os.getenv('OMG_API_KEY')
         omg_address = os.getenv('OMG_ADDRESS')
         dns_record_name = '.'.join((os.getenv('OMG_DNS_RECORD_NAME'),omg_address))
-        
         # get public IP
         ip = requests.get('https://api.ipify.org').content.decode('utf8')
         print(f'Got a public IP of {ip} from https://api.ipify.org')
-        
         # get a list of records from the specified omg.lol username
         url = f'https://api.omg.lol/address/{omg_address}/dns'
         headers = {'Authorization': api_key}
@@ -27,7 +24,7 @@ def update():
                 if dns_record['data'] == ip:
                     print('DNS record already has the correct IP! Nothing left to do here :)')
                     exit(0)
-# update record if we got an ID for it
+        # update record if we got an ID for it
         if id:
             url = f'https://api.omg.lol/address/{omg_address}/dns/{id}'
             # same header as above
