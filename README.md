@@ -20,6 +20,7 @@ This script updates a DNS record on omg.lol
     parameters:
     type:script_output
     message:Updating omg.lol DNS record
+    description:Update omg.lol DNS record
     ```
 * Restart the configd service
     - `service configd restart`
